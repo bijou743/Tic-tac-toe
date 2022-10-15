@@ -1,0 +1,157 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--background: #f3d2c1;
+	--grid: #001858;
+	--gridWidth: 13px;
+	--blue: #8bd3dd;
+	--pink: #f582ae;
+	--text: #001858;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: var(--background);
+}
+
+.content {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	/* gap: 50px; */
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.info {
+	margin: 20px 0 20px;
+	font-size: 30px;
+	color: var(--text);
+	font-weight: bold;
+}
+
+.area {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: start;
+	width: 450px;
+	height: 450px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.cell {
+	width: 150px;
+	height: 150px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 100px;
+	position: relative;
+	z-index: 1;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.cell.checked {
+	cursor: auto;
+}
+
+.cell.x {
+	background-image: url(./img/cross.png);
+	opacity: 1;
+}
+
+.cell.o {
+	background-image: url(./img/round.png);
+
+	opacity: 1;
+}
+
+.grid {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+}
+
+.grid .line {
+	background-color: var(--grid);
+	position: absolute;
+	border-radius: 5px;
+}
+
+.grid .line:nth-child(1),
+.grid .line:nth-child(2) {
+	width: 100%;
+	height: var(--gridWidth);
+}
+
+.grid .line:nth-child(3),
+.grid .line:nth-child(4) {
+	height: 100%;
+	width: var(--gridWidth);
+}
+
+.grid .line:nth-child(1) {
+	top: calc(100% / 3 - var(--gridWidth) / 2);
+}
+
+.grid .line:nth-child(2) {
+	top: calc((100% / 3) * 2 - var(--gridWidth) / 2);
+}
+
+.grid .line:nth-child(3) {
+	left: calc(100% / 3 - var(--gridWidth) / 2);
+}
+
+.grid .line:nth-child(4) {
+	left: calc((100% / 3) * 2 - var(--gridWidth) / 2);
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+	opacity: 0;
+	z-index: 2;
+	display: none;
+}
+
+.btn {
+	background-color: var(--pink);
+	color: #fff;
+	border: 0;
+	font-size: 25px;
+	padding: 15px 40px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+@media (max-width: 500px) {
+	.area {
+		width: calc(100vw - 60px);
+		height: calc(100vw - 60px);
+	}
+
+	.cell {
+		width: calc((100vw - 60px) / 3);
+		height: calc((100vw - 60px) / 3);
+	}
+}
