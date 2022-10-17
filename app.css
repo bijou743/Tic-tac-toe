@@ -16,20 +16,24 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: var(--background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 .content {
 	display: grid;
 	justify-content: center;
 	align-items: center;
-	/* gap: 50px; */
+	gap: 100px;
+	grid-template-rows: 450px 150px;
 	text-align: center;
 	width: 100vw;
-	height: 100vh;
 }
 
 .info {
-	margin: 20px 0 20px;
+	margin: 00px 0 20px;
 	font-size: 30px;
 	color: var(--text);
 	font-weight: bold;
