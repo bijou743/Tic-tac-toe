@@ -69,6 +69,14 @@ body {
 	transition: opacity 0.5s ease;
 }
 
+.cell:nth-child(1) {
+	background-image: url(./img/cross.png);
+}
+
+.cell:nth-child(2) {
+	background-image: url(./img/round.png);
+}
+
 .cell.checked {
 	cursor: auto;
 }
