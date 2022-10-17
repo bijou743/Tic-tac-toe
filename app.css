@@ -11,6 +11,7 @@
 	--blue: #8bd3dd;
 	--pink: #f582ae;
 	--text: #001858;
+	--index: (1vw + 1vh);
 }
 
 body {
@@ -149,6 +150,11 @@ body {
 }
 
 @media (max-width: 500px) {
+	.content {
+		grid-template-rows: calc(100vw - 60px) 150px;
+		gap: calc(var(--index) * 5);
+	}
+
 	.area {
 		width: calc(100vw - 60px);
 		height: calc(100vw - 60px);
