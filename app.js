@@ -107,6 +107,7 @@ function restartGame() {
 	moves.o = [];
 
 	overlay.style.display = 'none';
+	playerWin = null;
 }
 
 function changeInfo(text) {
